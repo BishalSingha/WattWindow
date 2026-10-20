@@ -1,0 +1,39 @@
+{
+  "mae_cents": {
+    "Same hour last week": 3.420665228690228,
+    "Gradient boosting": 2.843612199645764,
+    "Gradient boosting (tuned)": 2.8784398620239804,
+    "LSTM (price only)": 2.884287558437435,
+    "LSTM (+ weather, calendar)": 2.790922718301095,
+    "Gradient boosting (expanded features)": 2.759931173395416
+  },
+  "improvement_vs_baseline_pct": 19.315952047953168,
+  "within_day": {
+    "days": 199,
+    "model": 1.1146573492462313,
+    "naive": 1.129504501675042,
+    "best": 2.0507808835845895,
+    "beat_avg_share": 0.7738693467336684
+  },
+  "blocks_48": {
+    "H": 48.0,
+    "K": 3.0,
+    "blocks": 100.0,
+    "model": 1.228110625,
+    "naive": 1.2562639583333333,
+    "best": 2.790788125,
+    "model_minus_naive": -0.028153333333333298,
+    "std_err": 0.20377293132035193
+  },
+  "blocks_24": {
+    "H": 24.0,
+    "K": 3.0,
+    "blocks": 200.0,
+    "model": 1.2652447916666667,
+    "naive": 1.1103752083333334,
+    "best": 2.177861875,
+    "model_minus_naive": 0.15486958333333337,
+    "std_err": 0.13129670075086824
+  },
+  "test_hours": 4810
+}
