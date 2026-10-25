@@ -293,7 +293,7 @@ with tab_accuracy:
     a1, a2 = st.columns(2)
     with a1:
         bt = go.Figure(go.Bar(
-            x=["Simple rule<br>(same hour last week)", "Cheapest Hours", "Perfect hindsight"],
+            x=["Simple rule<br>(same hour last week)", "WattWindow", "Perfect hindsight"],
             y=[wd["naive"], wd["model"], wd["best"]], marker_color=["#8b95a3", GOLD, NAVY],
             text=[f"{v:.1f}" for v in (wd["naive"], wd["model"], wd["best"])], textposition="outside"))
         bt.update_layout(height=340, margin=dict(t=50, b=10), yaxis_title="c/kWh cheaper than a random time",
@@ -346,10 +346,10 @@ with tab_accuracy:
 # Tab 4: about
 # ---------------------------------------------------------------------------
 with tab_about:
-    st.subheader("What is Cheapest Hours?")
+    st.subheader("What is WattWindow?")
     st.markdown(
         "If you have a spot-price electricity contract in Finland, your price changes every hour. "
-        "Cheapest Hours shows you the best time to run something flexible, like laundry, EV charging "
+        "WattWindow shows you the best time to run something flexible, like laundry, EV charging "
         "or the water heater, so you pay less for the same energy.")
 
     st.subheader("How it works")
