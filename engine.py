@@ -1,4 +1,4 @@
-"""Cheapest Hours: data loading, live fetching, forecasting and window planning."""
+"""WattWindow: data loading, live fetching, forecasting and window planning."""
 import json
 from datetime import datetime, timedelta, timezone
 
