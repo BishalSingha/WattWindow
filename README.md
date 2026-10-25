@@ -1,5 +1,3 @@
-# WattWindow
-
 # ⚡ WattWindow
 
 **Find the cheapest time to run your appliances on a Finnish spot-price electricity contract.**
@@ -15,7 +13,7 @@ Pick what you want to run (washing machine, EV charging, sauna heater, ...), and
 ## What it does
 
 - **Plans your appliance.** Choose an appliance, a duration and a look-ahead, and get the best start time, an estimated cost and your top three options.
-- **Shows exact vs. forecast prices.** Hours already published by the day-ahead market are exact. For hours that are not published yet, a machine learning model forecasts the price up to 48 hours beyond the last published hour. The two are clearly marked in every chart.
+- **Shows exact vs. forecast prices.** Hours already published by the day-ahead market are exact. For hours that are not published yet, a machine learning model forecasts the price up to 48 hours beyond the last published hour. The two are clearly marked in the planner chart.
 - **Explains Finnish price patterns.** Interactive charts of price by weekday and hour, price over time, price vs. wind power, and monthly volatility.
 - **Is honest about reliability.** A dedicated tab shows forecast vs. actual prices on unseen data, compares all models tested, and states the limitations.
 
@@ -45,8 +43,8 @@ Evaluated on about 200 days of held-out data (Feb to Sep 2026), strictly chronol
 | Same hour last week (baseline) | 3.42 |
 | Gradient boosting | 2.84 |
 | Gradient boosting (tuned) | 2.88 |
-| LSTM (price history only) | 2.99 |
-| LSTM (+ weather, calendar) | 2.81 |
+| LSTM (price history only) | 2.88 |
+| LSTM (+ weather, calendar) | 2.79 |
 | **Gradient boosting (expanded features)** | **2.76** |
 
 Hyperparameter tuning made almost no difference, and neither did a more complex architecture. Adding better features helped most.
@@ -85,7 +83,7 @@ WattWindow/
 ├── history_full.csv                # Hourly history, used for charts and as offline fallback
 ├── test_results.csv                # Forecast vs. actual on the test period
 ├── metrics.json                    # Numbers shown in the reliability tab
-└── Electricity_Forecast_clean_v2.ipynb   # Full analysis notebook
+└── WattWindow.ipynb   # Full analysis notebook
 ```
 
 ## Run it locally
@@ -111,15 +109,29 @@ With a valid token the app fetches live prices and weather (cached for 30 minute
 1. Push the repository to GitHub.
 2. Create a new app at [share.streamlit.io](https://share.streamlit.io) pointing at `app.py`.
 3. Under **Advanced settings → Secrets**, add `ENTSOE_API_KEY = "your-token-here"`.
-4. If the model fails to load, make sure the `scikit-learn`, `numpy` and `pandas` versions in `requirements.txt` match the ones used for training, and pick a matching Python version in the advanced settings.
+4. If the model fails to load, make sure the versions in `requirements.txt` match the training environment (the notebook ran on Python 3.13), and pick a matching Python version in the advanced settings.
+
+`requirements.txt`:
+
+```
+streamlit
+plotly
+joblib
+holidays
+entsoe-py
+fmiopendata
+scikit-learn==1.6.1
+numpy==2.1.3
+pandas==2.2.3
+```
 
 ## Reproduce the analysis
 
-The full pipeline (data collection, preprocessing, EDA, models, backtest and export for the dashboard) is in `Electricity_Forecast_clean_v2.ipynb`.
+The full pipeline (data collection, preprocessing, EDA, models, backtest and export for the dashboard) is in `WattWindow.ipynb`.
 
 1. Open it in Google Colab.
 2. Add `FINGRID_API_KEY` and `ENTSOE_API_KEY` under Colab Secrets and enable notebook access.
-3. Run all cells. The Fingrid pulls and the LSTM training take the longest, so expect 15 to 25 minutes.
+3. Run all cells. The Fingrid pulls and the LSTM training take the longest, so expect roughly 20 to 40 minutes.
 
 ## Limitations
 
