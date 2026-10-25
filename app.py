@@ -6,7 +6,7 @@ import streamlit as st
 
 import engine
 
-st.set_page_config(page_title="Cheapest Hours", page_icon="⚡", layout="wide")
+st.set_page_config(page_title="WattWindow", page_icon="⚡", layout="wide")
 
 GREEN, AMBER, RED, GREY, NAVY, GOLD = "#2e9e5b", "#e8a317", "#d64545", "#c4c9d1", "#14213d", "#f2a900"
 WEEKDAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
@@ -127,7 +127,7 @@ def price_chart(tl_all, view_start, plan_end, best):
 # ---------------------------------------------------------------------------
 # Header
 # ---------------------------------------------------------------------------
-st.title("⚡ Cheapest Hours")
+st.title("⚡ WattWindow")
 st.caption("When is electricity cheapest in Finland over the next few days? "
            "Choose what you want to run and we find the best time.")
 
