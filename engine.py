@@ -91,7 +91,7 @@ def fallback_inputs(history, days=21):
 
 
 # ---------------------------------------------------------------------------
-# Building the features exactly as in the notebook
+# Building the features
 # ---------------------------------------------------------------------------
 def compute_features(hist):
     """Feature table for an hourly, Helsinki-time DataFrame with price, Air temperature and Wind speed."""
