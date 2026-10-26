@@ -143,7 +143,7 @@ The full pipeline (data collection, preprocessing, EDA, models, backtest and exp
 
 ## Team
 
-Bishal Singha, Shounak and Aakash. Introduction to Data Science, University of Helsinki, 2026.
+Bishal Singha, Shounak and Aakash. Data Science, University of Helsinki, 2026.
 
 ## Acknowledgements
 
