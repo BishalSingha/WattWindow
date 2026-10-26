@@ -4,7 +4,7 @@
 
 Pick what you want to run (washing machine, EV charging, sauna heater, ...), and WattWindow shows the cheapest window over the next few days, what it will cost, and how much you save compared with running it at an average time.
 
-**🔗 Live app:** [ADD YOUR STREAMLIT LINK HERE]
+**🔗 Live app:** https://wattwindow.streamlit.app/
 
 *Course project for Introduction to Data Science, University of Helsinki, 2026.*
 
