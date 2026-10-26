@@ -6,7 +6,7 @@ Pick what you want to run (washing machine, EV charging, sauna heater, ...), and
 
 **🔗 Live app:** https://wattwindow.streamlit.app/
 
-*Course project for Introduction to Data Science, University of Helsinki, 2026.*
+*Course project for Data Science, University of Helsinki, 2026.*
 
 ---
 
